@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Multichainapi</title>
+ <%= csrf_meta_tags %>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+  <body>
+	  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+   <% if params[:controller].eql?("coins")%>
+			<nav class="navbar navbar-static-top logout-navigation" role="navigation">
+			  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+			    <span class="sr-only"></span>
+			  </a>
+			  <div class="navbar-custom-menu">
+			  <div class="col-md-6">
+			    <p> MultiChain API 
+			    </p>
+			   </div>
+			   <div class="col-md-6">
+			    <ul class="nav navbar-nav custom-nav">
+			      <li><%= session[:address]%></li>
+			      <li><i class="fa fa-sign-out"></i><%= link_to "Logout", users_path, :method => :delete %></li>
+			    </ul>
+			    </div>
+			  </div>
+			</nav>
+			<center>
+				<% unless @user.verified%>
+					<h5 style="color: red;">Your address is inactive, you can't proceed your transaction without allow permission to address</h5>
+				<%end%>
+			</center>
+			<div class="col-md-8 col-md-offset-2 coin-tab">
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="">
+			      <%= link_to "Coin Generation", coins_list_coins_path%>
+			    </li>
+			    <li role="presentation"><%= link_to "Send Coin", transactions_coins_path %></li>
+			    <li role="presentation"><%= link_to "Balance Check",balances_coins_path%></li>
+			    <li role="presentation"><%= link_to "Log Search",search_coins_path%></li>
+			    <li><%= link_to "API",api_doc_coins_path%></li>
+			  </ul>
+			</div>
+			<div class="clearfix"></div>
+	 <%end%>
+   <%= yield %>
+  </body>
+</html>

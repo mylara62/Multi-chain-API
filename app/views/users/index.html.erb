@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-info btn-lg register-btn" data-toggle="modal" data-target="#registation_model">Register</button>
+<div id="registation_model" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <%#= form_for User.new, url: register_users_path, method: :post do |f| %>
+        <%= form_tag register_users_path, method: :post do %>
+        <h4 class="modal-title">Register with password</h4>
+      </div>
+      <div class="modal-body">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+       <%#= f.label :password, "Password"%>
+       <%#= f.password_field :password, autocomplete: "off", class:"form-control" %>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %>
+      	<%#= f.submit "Submit",  class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

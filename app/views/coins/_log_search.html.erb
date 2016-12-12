@@ -1,0 +1,16 @@
+<table class="table table-striped">
+	<tr>
+		<th>Address</th>
+		<th>Txid</th>
+		<th>Block Time</th>
+	</tr>
+	<% @history.each do |history|%>
+		<% unless history["addresses"].empty? %>
+			<tr>
+				<td><%= history["addresses"].join(',')%></td>
+				<td><%= history["txid"]%></td>
+				<td><%= history["blocktime"]%></td>
+			</tr>
+	  <%end%>
+	<%end%>
+</table>

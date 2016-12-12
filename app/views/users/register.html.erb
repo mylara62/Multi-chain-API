@@ -1,0 +1,22 @@
+<div class="register">
+	<center><h3 style="color: #fcac45;">Multichain</h3></center>
+	<div class="register-form">
+		<section id="login">
+    	<div class="container">
+    		<div class="col-xs-12">
+          <div class="form-wrap ">
+						<h1>Login with Existing Wallet Password</h1>
+							<p class="login-text">If you don't have existing wallet,then new one will be generated with the password you enter here.</p>
+							<%= form_tag users_path,method: :post do %>
+								<div class="form-group">
+									<%= label_tag "Password" %>  
+					  			<%= password_field_tag "password",nil,placeholder: "Enter your password",class: "form-control",autocomplete: :off,required: :true %>
+					  		</div>  
+		  					<%= submit_tag "Register", class: "btn btn-custom "%>
+						  <%end%>
+		      </div>
+		    </div>
+		  </div>
+		</section>
+	</div>
+</div>

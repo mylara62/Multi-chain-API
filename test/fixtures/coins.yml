@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  initial_supply: 1
+  coin_name: MyString
+  issuer_address: MyString
+  from_addres: MyString
+  to_address: MyString
+
+two:
+  initial_supply: 1
+  coin_name: MyString
+  issuer_address: MyString
+  from_addres: MyString
+  to_address: MyString

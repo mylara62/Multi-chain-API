@@ -1,0 +1,19 @@
+<div class="col-md-8">
+	<%= form_tag generate_coin_coins_path,method: :post do%>
+		<div class="form-group">
+			<%= label_tag "Initial Supply"%>
+			<%= text_field_tag "initial_supply",nil,class: "form-control",required: true%>
+		</div>
+		<div class="form-group">
+			<%= label_tag "Coin Name"%>
+			<%= text_field_tag "coin_name",nil,class: "form-control",required: true%>
+		</div>
+		<div class="form-group">
+			<%= label_tag "Issuer Address"%>
+			<%= text_field_tag "issuer_address",nil,class: "form-control",required: true%>
+		</div>
+		<div class="form-group">
+			<%= submit_tag "Generate", class: "btn btn-default"%>
+		</div>
+	<%end%>
+</div>

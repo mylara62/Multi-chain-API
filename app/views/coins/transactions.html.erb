@@ -1,0 +1,21 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br><br>
+		<%= link_to "Send Coin", send_coin_coins_path,class: "btn btn-primary"%><br><br>
+		<table class="table table-striped">
+			<tr>
+				<th>Coin Name</th>
+				<th>From Address</th>
+				<th>To Address</th>
+				<th>Transaction Address</th>
+			</tr>
+			<% @transactions.each do |transaction|%>
+				<tr>
+					<td><%= link_to transaction.coin_name, coin_transaction_coins_path(transaction_id: transaction.id)%></td>
+					<td><%= transaction.from_address%></td>
+					<td><%= transaction.to_address%></td>
+					<td><%= transaction.transactionhash%></td>
+				</tr>
+			<%end%>
+		</table>
+	</div>
+</div>

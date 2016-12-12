@@ -1,0 +1,19 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br><br>
+		<%= link_to "Generate Coin",generate_coin_coins_path,class: "btn btn-primary"%><br><br>
+		<table class="table table-striped">
+			<tr>
+				 <th>Coin</th>
+				 <th>Coin Address</th>
+				 <th>Miner Address</th>
+			</tr>
+			<% @coins.each do |coin|%>
+				<tr>
+					<td><%= link_to coin.coin_name,coin_show_coins_path(coin_id: coin) %></td>
+					<td><%= coin.issuer_address%></td>
+					<td><%= coin.miner_address%></td>
+				</tr>
+			<%end%>
+		</table>
+  </div>
+</div>

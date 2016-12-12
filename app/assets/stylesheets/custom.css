@@ -1,0 +1,157 @@
+.form-control{
+	width: 18% !important;	
+}
+.register h3{
+	margin-top: 0;
+  margin-bottom: 0;
+  padding: 12px 0px;
+}
+#login {
+  padding-top: 50px;
+  border-top: 1px solid #e5e5e5;
+}
+#login .form-wrap {
+  width: 38%;
+  margin: 0 auto;
+  border: 1px solid #e5e5e5;
+  padding: 0px;
+  border-radius: 5px;
+}
+#login  .form-control{
+	width: 100% !important;
+	height: 38px;
+}
+#login h1 {
+  color: #1fa67b;
+  font-size: 21px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 0;
+  margin-top: 0;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+#login .form-group {
+  margin-bottom: 25px;
+  padding: 0px 15px;
+}
+#login .btn-custom {
+  color: #fff;
+  background-color: #1fa67b;
+  margin: 0px 15px;
+  width: 93%;
+  padding: 8px 0px !important;
+  font-size: 19px ;
+  margin-bottom: 15px ;
+}
+#login label{
+	font-size: 16px;
+}
+.logout-navigation{
+  background-color: #1fa67b;
+  color: #fff;
+}
+.logout-navigation .navbar-nav>li>a {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: inline;
+  color: #fff;
+  font-size: 17px;
+  padding-left: 0px;
+}
+.coin-tab .nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 42px;
+  font-size: 14px !important;
+  margin: 0;
+}
+.logout-navigation  i{
+  font-size: 15px;
+}
+.logout-navigation .navbar-nav>li{
+  padding-left: 15px;
+}
+.logout-navigation p{
+  margin: 0px;
+  padding: 0px;
+}
+.logout-navigation {
+  position: relative;
+  min-height: 35px !important;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.logout-navigation .custom-nav{
+  padding-left: 20px;
+}
+.coin-tab .nav-tabs{
+  background-color: #eee;
+}
+.coin-tab  .tab-content {
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 15px;
+}
+.coin-tab .nav-tabs>li>a{
+  color: #333;
+  font-size: 15px;
+}
+.coin-tab {
+  margin-top: 30px;
+}
+.coin-tab .nav-tabs>li.active>a, .coin-tab .nav-tabs>li.active>a:hover, .coin-tab .nav-tabs>li.active>a:focus{
+  background-color: #1fa67b;
+  color: #fff;
+}
+.custom-nav{
+  float: right !important;
+  margin-right: 12px !important;
+}
+.content-api p{
+  width: 100%;
+  display: block;
+  word-wrap: break-word;
+  font-size: 16px;
+}
+.content-api h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0;
+  padding: 20px 0;
+}
+.content-api .content-link{
+  margin: 0px;
+  padding: 0px;
+}
+.logout-navigation .navbar-nav>li>a:hover{
+  background-color: transparent;
+}
+.content-api{
+  border: 1px solid #e5e5e5;
+  padding: 0px 15px;
+}
+.margin-10{
+  margin-left: 10px;
+}
+.margin-20{
+  margin-left: 10px;
+}
+.margin-5{
+  margin-left: 5px;
+}
+.margin-3{
+   margin-left: 3px;
+}
+.login-text{
+  margin: 5px 18px 15px;
+  font-size: 11px;
+}
+.content-api .table>thead>tr>th, .content-api .table>tbody>tr>th, 
+.content-api .table>tfoot>tr>th, .content-api .table>thead>tr>td, 
+.content-api .table>tbody>tr>td, .content-api .table>tfoot>tr>td{
+  word-break: break-all;
+}

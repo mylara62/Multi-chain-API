@@ -1,0 +1,36 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br>
+  	<h3>Log Search</h3><br><br>
+		<div class="balance_form">
+			<div class="form-group">
+				<label for="wallet_address">Wallet Address</label>
+				<input type="text" id="search_wallet_address" class="form-control" name="wallet_address" required>
+			</div>
+			<div class="form-group">
+				<label for="coin_address">Coin Address</label>
+				<input type="text" id="search_coin_address" class="form-control" name="coin_address" required>  
+			</div>
+			<div class="form-group">
+				<button id="log_search_btn">Search</button>
+			</div>
+		</div><br>
+		<div id="log_search_results"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$("body").on("click","#log_search_btn",function(){
+	address = $("#search_wallet_address").val()
+	$.ajax({
+		url: '/coins/get_search',
+		method: 'GET',
+		data: {wallet_address: address}
+	});
+});
+</script>
+
+<style type="text/css">
+	.form-control{
+		width: 50% !important;
+	}
+</style>

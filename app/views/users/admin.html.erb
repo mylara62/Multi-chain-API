@@ -1,0 +1,45 @@
+<nav class="navbar navbar-static-top logout-navigation" role="navigation">
+  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+    <span class="sr-only"></span>
+  </a>
+  <div class="navbar-custom-menu">
+  <div class="col-md-6">
+    <p> MultiChain API 
+    </p>
+   </div>
+   <div class="col-md-6">
+    <ul class="nav navbar-nav custom-nav">
+      <li><%= session[:address]%></li>
+      <li><i class="fa fa-sign-out"></i><%= link_to "Logout", users_path, :method => :delete %></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api">
+  	<h3>Users</h3>
+  	<table class="table table-striped">
+  	  <tr>
+  	  	<th>Password</th>
+  	  	<th>Address</th>
+  	  	<th>Verification</th>
+  	  	<th>Permission</th>
+  	  </tr>
+  	  <% User.all.each do |user|%>
+	  	  <tr>
+	  	  	<td><%= aescrypt_password(user.password)%></td>
+	  	  	<td><%= user.address%></td>
+	  	  	<td><%= user.verified%></td>
+	  	  	<td>
+	  	  		<% if user.verified %>
+	  	  			<%= link_to "Disallow","#",class: "btn btn-danger"%>
+	  	  		<%else%>
+	  	  			<%= link_to "Allow",access_allow_users_path(user_id: user.id),class: "btn btn-primary"%>
+	  	  		<%end%>
+	  	  	</td>
+	  	  </tr>
+	   <%end%>
+  	</table>
+  </div>
+</div>

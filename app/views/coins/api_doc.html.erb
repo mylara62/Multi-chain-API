@@ -1,0 +1,273 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api">
+    <h3 class="text-center"> MultiChain - JSON RPC API’s</h3>
+    <p><b>Header:</b><br>
+      Content-Type: “application/json”
+    </p><br>
+    <p><b>API List:</b></p>
+    <h3><b>1.User Register</b></h3>
+    <p class="content-link"><b>URL:</b><a>  http://13.78.54.196:3000/api/v1/users</a></p>
+    <p class="content-link"> <b>Method: </b> POST</p>
+    <p class="content-link"><b>Body (Request) : </b>{“password”: “basil123”}</p>
+    <p class="content-link">
+      <b>Body ( Response) :</b> {"address":"1aTz4JqCBnpNcJnCifegh8mTebz6Khg23eCJwL"}
+    </p><br>
+    <p class="content-link">
+      <b>CURL:</b> curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: 54932ea4-6c50-43ce-b578-c3f1d2fcf05e" -d '{"password": "basil123"}' "http://13.78.54.196:3000/api/v1/users"
+    </p>
+    <h3><b>2.Coin Generation</b></h3>
+    <p class="content-link"><b>URL:</b> <a>http://13.78.54.196:3000/api/v1/coins</a></p>
+    <p class="content-link">Method: POST</p>
+    <p class="content-link"><b>Body(Request) :</b><br> 
+      {<br>
+      "initial_supply": 100000,<br>
+      "coin_name":"Silver",<br>
+      "issuer_address":"1aTz4JqCBnpNcJnCifegh8mTebz6Khg23eCJwL"<br>
+      }
+    </p>
+    <p>
+      <b>Body(Response):</b> 
+      <br>
+      {
+        "miner_address": "4955f4726209df1b3187aeb2b258e88fb6846ae323e74897cbf3798e6fd91cf5",
+        "abi":
+        [
+            {
+                "name": "Demo",
+                "issuetxid": "c92c774e3529b6aa95136feb1fcf0ff7b8a7a5f8d7ee5c8da07b69ffc33b0503",
+                "assetref": "18434-266-11465",
+                "multiple": 1,
+                "units": 1,
+                "open": false,
+                "details":
+                {
+                },
+                "issueqty": 100000,
+                "issueraw": 100000
+            },
+            {
+                "name": "Silver",
+                "issuetxid": "4955f4726209df1b3187aeb2b258e88fb6846ae323e74897cbf3798e6fd91cf5",
+                "assetref": null,
+                "multiple": 1,
+                "units": 1,
+                "open": false,
+                "details":
+                {
+                },
+                "issueqty": 100000,
+                "issueraw": 100000
+            }
+        ],
+        "coin_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY"
+    }
+    </p>
+    <p class="content-link">
+      <b>CURL:</b> curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: af028f6c-4a06-c2b7-3dec-656bbc6d17d5" -d '{
+      "initial_supply": 100000,
+      "coin_name":"Silver",
+      "issuer_address":"12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY"
+      }' "http://13.78.54.196:3000/api/v1/users"
+    </p>
+    <h3><b>3.Send Coin</b></h3>
+    <p class="content-link">
+      <b>URL:</b> <a>http://13.78.54.196:3000/api/v1/coins/coin_send</a>
+    </p>
+    <p class="content-link">
+      <b>Method:</b> POST
+    </p>
+    <p class="content-link"><b>Body(Request) :</b><br> 
+      <br>
+        {
+        "from_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",<br>
+        "to_address": "1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm",<br>
+        "coin_name":"Demo",<br>
+        "amount": 100,<br>
+        "action_type": "Type",<br>
+        "action_info": "Info",<br>
+        "tags": "chain2",<br>
+        "message": "Message"
+       }
+    </p>
+
+    <p>
+      <b>Body(Response):</b><br> 
+      {<br> "transactionhash":  "3cf5f822e7c73535c62abf98ae9fa8c9360bd2eb45e1cfa289d4beec081818d3",
+            "action_type": "Type",
+            "action_info": "Info",
+            "tags": "chain2",
+            "message": "Message",
+            "datetime": "2016-10-04T09:43:13.162+00:00"<br>} 
+    </p>
+    <p class="content-link">
+      <b>CURL:</b> curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: 68611fea-759b-2145-227a-ea14eeaaddc0" -d '{
+      "from_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",
+      "to_address": "1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm",
+      "coin_name":"Demo",
+      "amount": 100,
+      "action_type": "Type",
+      "action_info": "Info",
+      "tags": "chain2",
+      "message": "Message"
+      }' "http://13.78.54.196:3000/api/v1/users"
+    </p>
+    <h3><b>
+      4. Account Balance Check</b>
+    </h3>
+    <p class="content-link">
+      <b>URL:</b> <a href="#"> http://13.78.54.196:3000/api/v1/balances</a>
+    </p>
+    <p class="content-link">
+      <b>Method:</b> POST
+    </p>
+    <p class="content-link">
+      <b>Body(Request):</b>
+      <br>
+    <p>{</p>
+    "wallet_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",
+    "coin_address":"1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm"
+    <p>}</p>
+    </p>
+    <p>
+      <b>Body(Response):</b> {"balance":"599800.0"}
+    </p>
+    <p class="content-link">
+      <b>CURL:</b> curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: b0415d27-d907-46bb-4e29-eb36bf9e97fa" -d '{
+      "wallet_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",
+      "coin_address": "1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm"
+      }
+      ' "http://13.78.54.196:3000/api/v1/users"
+    </p>
+    <h3><b>
+      5. Log Search </b>
+    </h3>
+    <p class="content-link">
+      URL:  <a href="#">http://13.78.54.196:3000/api/v1/coins/history</a>
+    </p>
+    <p class="content-link">
+      Method: POST
+    </p>
+    <p class="content-link">
+      <b>Body(Request):</b>
+      <br>
+    <p>{</p>
+    "wallet_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",
+    "coin_address":"1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm"
+    <p>}</p>
+    </p>
+    <p>
+      <b>Body( Response):</b>
+      <br>
+    {
+        "history":
+        [
+            {
+                "balance":
+                {
+                    "amount": 0,
+                    "assets":
+                    [
+                    ]
+                },
+                "myaddresses":
+                [
+                    "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY"
+                ],
+                "addresses":
+                [
+                    "1DUvQJCdQ9TFh38zn79kRqSGCQV2SVCcWHruMq"
+                ],
+                "permissions":
+                [
+                    {
+                        "connect": false,
+                        "send": false,
+                        "receive": true,
+                        "issue": false,
+                        "mine": false,
+                        "admin": false,
+                        "activate": false,
+                        "startblock": 0,
+                        "endblock": 4294967295,
+                        "timestamp": 1475502244,
+                        "addresses":
+                        [
+                            "1DUvQJCdQ9TFh38zn79kRqSGCQV2SVCcWHruMq"
+                        ]
+                    }
+                ],
+                "data":
+                [
+                ],
+                "confirmations": 5120,
+                "blockhash": "0000699f2b5a819072c0724108f88a81da433c052c91451de7f68c6688f7d647",
+                "blockindex": 1,
+                "blocktime": 1475502261,
+                "txid": "9014908d72218dbd685dd07d62ec31fba1d59c069779ff10fad220aec1c0b60b",
+                "valid": true,
+                "time": 1475502244,
+                "timereceived": 1475502244
+            },
+            {
+                "balance":
+                {
+                    "amount": 0,
+                    "assets":
+                    [
+                    ]
+                },
+                "myaddresses":
+                [
+                    "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY"
+                ],
+                "addresses":
+                [
+                    "1aTz4JqCBnpNcJnCifegh8mTebz6Khg23eCJwL"
+                ],
+                "permissions":
+                [
+                    {
+                        "connect": true,
+                        "send": false,
+                        "receive": false,
+                        "issue": false,
+                        "mine": false,
+                        "admin": false,
+                        "activate": false,
+                        "startblock": 0,
+                        "endblock": 4294967295,
+                        "timestamp": 1475502388,
+                        "addresses":
+                        [
+                            "1aTz4JqCBnpNcJnCifegh8mTebz6Khg23eCJwL"
+                        ]
+                    }
+                ],
+                "data":
+                [
+                ],
+                "confirmations": 5111,
+                "blockhash": "0000a5aa5e92107e80866b2a699a64eee5c4317aa574827f96892bdd4623d9fa",
+                "blockindex": 1,
+                "blocktime": 1475502391,
+                "txid": "5ae65196ec5ea2d0c8be4da984a3fa764babddc994b4f4e02a552ef6b9f19c51",
+                "valid": true,
+                "time": 1475502388,
+                "timereceived": 1475502388
+            }
+        }
+     ]
+    }
+    </p>
+   <p class="content-link">
+      <b>CURL:</b> curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: b0415d27-d907-46bb-4e29-eb36bf9e97fa" -d '{
+      "wallet_address": "12AYrUh3AXFxz9QJTt1JvpXnLFVE7WuzHVy2HY",
+      "coin_address": "1TNJTonrmWZZhHkw2vMsCbwtdqihx4F2WwPjJm"
+      }
+      ' "http://13.78.54.196:3000/api/v1/users"
+    </p>
+    <br>
+  </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br>
+  	<h3> Send Coin</h3><br>
+		<%= form_tag coin_send_coins_path,method: :post do%>
+			<div class="form-group">
+				<%= label_tag "From Address"%>
+				<%= text_field_tag "from_address",nil,class: "form-control",required: true%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "To Address"%>
+				<%= text_field_tag "to_address",nil,class: "form-control",required: true%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Coin Name"%>
+				<%= text_field_tag "coin_name",nil,class: "form-control",required: true%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Amount"%>
+				<%= text_field_tag "amount",nil,class: "form-control",required: true%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Type"%>
+				<%= text_field_tag "type",nil,class: "form-control"%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Info"%>
+				<%= text_field_tag "info",nil,class: "form-control"%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Tags"%>
+				<%= text_field_tag "tags",nil,class: "form-control"%>
+			</div>
+			<div class="form-group">
+				<%= label_tag "Message"%>
+				<%= text_field_tag "message",nil,class: "form-control",required: true%>
+			</div>
+			<div class="form-group">
+				<%= submit_tag "Send Coin", class: "btn btn-default"%>
+			</div>
+		<%end%>
+  </div>
+</div>
+
+<style type="text/css">
+	.form-control{
+		width: 50% !important;
+	}
+</style>

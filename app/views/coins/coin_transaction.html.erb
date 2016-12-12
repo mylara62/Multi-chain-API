@@ -1,0 +1,43 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br>
+	<h3>Transaction Details</h3><br>
+	<table class="table table-striped">
+		<tr>
+			<th>Coin Name</th>
+			<td><%= @transaction.coin_name%></td>
+		</tr>
+		<tr>
+			<th>From Address</th>
+			<td><%= @transaction.from_address%></td>
+		</tr>
+		<tr>
+			<th>To Address</th>
+			<td><%= @transaction.to_address%></td>
+		</tr>
+		<tr>
+			<th>Amount</th>
+			<td><%= @transaction.amount%></td>
+		</tr>
+		<tr>
+			<th>Type</th>
+			<td><%= @transaction.action_type%></td>
+		</tr>
+		<tr>
+			<th>Info</th>
+			<td><%= @transaction.info%></td>
+		</tr>
+		<tr>
+			<th>Tags</th>
+			<td><%= @transaction.tags%></td>
+		</tr>
+		<tr>
+			<th>Message</th>
+			<td><%= @transaction.message%></td>
+		</tr>
+		<tr>
+			<th>Transactionhash</th>
+			<td><%= @transaction.transactionhash%></td>
+		</tr>
+	</table>
+  </div>
+</div>

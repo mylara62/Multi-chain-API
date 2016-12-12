@@ -1,0 +1,42 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="content-api"><br><br>
+	<h3>Generated Coin Details</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Intial Supply</th>
+			<td><%= @coin.initial_supply%></td>
+		</tr>
+		<tr>
+			<th>Coin Name</th>
+			<td><%= @coin.coin_name%></td>
+		</tr>
+		<tr>
+			<th>Issuer Address</th>
+			<td><%= @coin.issuer_address%></td>
+		</tr>
+		<tr>
+			<th>Transaction Address</th>
+			<td><%= @coin.miner_address%></td>
+		</tr>
+		<tr>
+			<th>Abi</th>
+			<td>
+				<% unless @abi.nil? %>
+					<% @abi.each do |asset|%>
+						<tr>
+							<th>Name</th>
+							<th>Issuetxid</th>
+							<th>Issueqty</th>
+						</tr>
+						<tr>
+							<td><%= asset["name"]%></td>
+							<td><%= asset["issuetxid"]%></td>
+							<td><%= asset["issueqty"]%></td>
+						</tr>
+					<%end%>
+				<%end%>
+			</td>
+		</tr>
+	</table>
+  </div>
+</div>

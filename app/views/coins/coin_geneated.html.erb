@@ -1,0 +1,38 @@
+<h3> Coin Generated Details</h3>
+<table class="table table-striped">
+	<tr>
+		<th>Intial Supply</th>
+		<td><%= session[:initial_supply]%></td>
+	</tr>
+	<tr>
+		<th>Coin Name</th>
+		<td><%= session[:coin_name]%></td>
+	</tr>
+	<tr>
+		<th>Issuer Address</th>
+		<td><%= session[:issuer_address]%></td>
+	</tr>
+	<tr>
+		<th>Transaction Address</th>
+		<td><%= session[:transaction_address]%></td>
+	</tr>
+	<tr>
+		<th>Abi</th>
+		<td>
+			<% unless session[:abi].nil? %>
+				<% session[:abi].each do |asset|%>
+					<tr>
+						<th>Name</th>
+						<th>Issuetxid</th>
+						<th>Issueqty</th>
+					</tr>
+					<tr>
+						<td><%= asset["name"]%></td>
+						<td><%= asset["issuetxid"]%></td>
+						<td><%= asset["issueqty"]%></td>
+					</tr>
+				<%end%>
+			<%end%>
+		</td>
+	</tr>
+</table>
